@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<style>
+  html{
+    background-color: rgba(224,224,224);
+    /* overflow-x: hidden; */
+}
+body {
+    font-family: var(--bs-font-sans-serif);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: rgba(224,224,224); 
+}
+.nav li{
+    height: 3rem;
+    margin-bottom: 1.4rem;
+    transition: .3s;
+}
+.nav li a:hover{
+    background-color: rgb(49, 134, 41);
+    transition: .2s;
+    border-radius: 5px;
+    color: white;
+    width: 100%;
+}
+.nav li:hover a {
+    color: white !important;
+}
+.Sidebar{
+    width: 16rem;
+    height: 28rem;
+    margin-top: -.7rem;
+    background-color: rgba(50, 205, 50, 0);
+    background-image: linear-gradient(to bottom, rgb(61, 117, 61), #1a3423);
+}
+.sidebar ul li{
+    display: flex;
+}
+.sidebar p{
+    height: 28rem;
+    color: white !important;
+}
+.container{
+    display: flex;
+    margin-left: 0rem;
+    align-items: center;
+    justify-content: space-between;
+}
+.content{
+    margin-left: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2rem;
+}
+.content > .first{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+.Mango{
+    padding: 2rem;
+    width: 12rem;
+    height: 25rem;
+    border-right: .6rem solid;
+    border-image: linear-gradient(to bottom, #FAB02F, #D28908) 1;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+.Mango:hover{
+    box-shadow: #2125296c 2px 2px 2px 2px;
+    transition: .3s;
+}
+.fruit-img img{
+    width: 80%;
+}
+/* .Mango .Atext{
+    align-items: center;
+    justify-content: center;
+}
+.Mango .Atext p{
+    text-align: end;
+} */
+.tomato{
+    width: 12rem;
+    height: 28rem;
+    /* background-color: rgb(13,110,253); */
+    border-right: .6rem solid;
+    border-image: linear-gradient(to bottom, #fd8383, #F35555) 1;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+.tomato:hover{
+    box-shadow: #2125296c 2px 2px 2px 2px;
+    transition: .3s;
+}
+.fruit-img img{
+    width: 50%;
+}
+/* .tomato .tomato-text{
+    align-items: center;
+    justify-content: center;
+}
+.tomato .tomato-text p{
+    text-align: end;
+} */
+.avocado{
+    width: 12rem;
+    height: 28rem;
+    /* background-color: rgb(13,110,253); */
+    border-right: .6rem solid;
+    border-image: linear-gradient(to bottom, #9EC74D, #80A92D) 1;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+.avocado:hover{
+    box-shadow: #2125296c 2px 2px 2px 2px;
+    transition: .3s;
+}
+.fruit-img img{
+    width: 50%;
+}
+/* .avocado .Dtext{
+    align-items: center;
+    justify-content: center;
+}
+.avocado .Dtext p{
+    text-align: end;
+} */
+.contentB{
+    display: flex;
+    flex-direction: column;
+    width: 16rem;
+    height: 28rem;
+    justify-content: center;
+    gap: 1.8rem;
+    /* background-color: white; */
+}
+.contentB div{
+    height: 13rem;
+}
+.contentB > .Orange{
+    display: flex;
+    flex-direction: column;
+    border-right: .6rem solid;
+    border-image: linear-gradient(to bottom,#FAB02F, #D28908) 1;
+    padding-top: 5%;
+    padding-right: 10%;
+    align-items: center;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    cursor: pointer;
+}
+.Orange:hover{
+    box-shadow: #2125296c 2px 2px 2px 2px;
+    transition: .3s;
+}
+.fruit-img img{
+    width: 36%;
+}
+/* .contentB .Orange .Orangetext{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0px;
+}
+.contentB .Orange .Orangetext p{
+    text-align: end;
+    margin-left: 20px;
+} */
+.contentB > .grape{
+    display: flex;
+    flex-direction: column;
+    border-right: .6rem solid;
+    border-image: linear-gradient(to bottom, #9970e4, #584085) 1;
+    padding-top: 12%;
+    padding-right: 10%;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.grape:hover{
+    box-shadow: #2125296c 2px 2px 2px 2px;
+    transition: .3s;
+}
+.fruit-img img{
+    width: 36%;
+}
+.fruit-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: -30%;
+}
+ .fruit-text p{
+    text-align: end;
+}
+
+@media only screen and (max-width: 1200px){
+    
+    .Sidebar{
+        width: 80px;
+        height: 28rem;
+        margin-top: -10rem;
+        z-index: 9999;
+        background-color: rgba(50, 205, 50, 0);
+        background-image: linear-gradient(to bottom, rgb(61, 117, 61), #1a3423);
+    }
+    .sidebar ul li{
+        display: flex;
+    }
+    .sidebar p{
+        height: 28rem;
+        color: white !important;
+        display: block;
+    }
+    .container{
+        display: flex;
+        margin-left: 0rem;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .content{
+        display: flex;
+        flex-direction: column;
+        margin-left: -3rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        gap: 1rem;
+    }
+    .content > .first{
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+        text-align: start;
+    }
+    .content .first h2{
+        font-weight: bolder;
+    }
+    .Mango {
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        width: 15rem;
+        height: 7rem;
+        border-right: .6rem solid;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        align-items: center;
+        justify-content: space-around;
+        text-align: center;
+    }
+    .Mango:hover {
+        box-shadow: #2125296c 2px 2px 2px 2px;
+        transition: .3s;
+    }
+    .fruit-img img {
+        width: 74px;
+    }
+    /* .Mango .Atext {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: larger;
+        padding-top: 10px;
+    }
+    .Atext h2 svg {
+        width: 40px;
+    }
+    .Atext h2 {
+        display: flex;
+    }   */
+    .tomato {
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        width: 15rem;
+        height: 7rem;
+        border-right: .6rem solid;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        align-items: center;
+        justify-content: space-around;
+        text-align: center;
+    }
+    .tomato:hover {
+        box-shadow: #2125296c 2px 2px 2px 2px;
+        transition: .3s;
+    }
+    .tomato .fruit-img img {
+        width: 74px;
+    }
+    /* .tomato .tomato-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: larger;
+        padding-top: 10px;
+    }
+    .tomato-text h2 svg {
+        width: 40px;
+    }
+    .tomato-text h2 {
+        display: flex;
+    } */
+    .avocado {
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        width: 15rem;
+        height: 7rem;
+        border-right: .6rem solid;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        align-items: center;
+        justify-content: space-around;
+        text-align: center;
+    }
+    .avocado:hover {
+        box-shadow: #2125296c 2px 2px 2px 2px;
+        transition: .3s;
+    }
+    .fruit-img img {
+        width: 74px;
+    }
+    /* .avocado .Dtext {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: larger;
+        padding-top: 10px;
+    }
+    .Dtext h2 svg {
+        width: 40px;
+    }
+    .Dtext h2 {
+        display: flex;
+    } */
+    .contentB{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+        height: auto;
+    }
+    .contentB > .Orange{
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        width: 15rem;
+        height: 7rem;
+        flex-wrap: wrap;
+        border-right: .6rem solid;
+        border-image: linear-gradient(to bottom, #fd8383, #F35555) 1;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        align-items: center;
+        justify-content: space-around;
+        text-align: center;
+        margin-left: 8px;
+    }
+    .Orange:hover{
+        box-shadow: #2125296c 2px 2px 2px 2px;
+        transition: .3s;
+    }
+    .fruit-img img{
+        width: 74px;
+    }
+    .contentB .Orange .fruit-text{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: larger;
+        margin-top: -100px;
+        color: #1e1e1e;
+    }
+    /* .contentB .Orange .Orangetext h2{
+        display: flex;
+    }
+    .contentB .Orange .Orangetext h2 svg{
+        width: 40px;
+    }
+    .contentB .Orange .Orangetext p{
+        display: flex;
+        width: 100px;
+        margin-left: 50px;
+    } */
+    .contentB > .grape{
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+        width: 15rem;
+        height: 7rem;
+        flex-wrap: wrap;
+        border-right: .6rem solid;
+        border-image: linear-gradient(to bottom, #fd8383, #F35555) 1;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        align-items: center;
+        justify-content: space-around;
+        text-align: center;
+        margin-left: 7px;
+    }
+    .grape:hover{
+        box-shadow: #2125296c 2px 2px 2px 2px;
+        transition: .3s;
+    }
+    .fruit-img img{
+        width: 74px;
+    }
+    .contentB .grape .fruit-text{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: larger;
+        margin-left: -60px;
+        margin-top: 16px;
+    }
+    .contentB .grape .fruit-text h2{
+        display: flex;
+    }
+    .contentB .grape .fruit-text h2 svg{
+        width: 40px;
+    }
+    .contentB .grape .fruit-text p{
+        display: flex;
+        width: 100px;
+        margin-left: 50px;
+    }
+}
+</style>
+<body>   
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: rgba(224,224,224);">
+        <div class="container-fluid mt-n2 p-2" style="
+          background-color: rgba(50, 205, 50, 0);
+          background-image: linear-gradient(to bottom, rgb(61, 117, 61), #2b5339); 
+          margin-top: -8px; 
+          margin-bottom: -8px;"
+        >
+            <div class="menu me-4" style="cursor:pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="white" class="bi bi-list-ul" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+                </svg>
+            </div>
+            <a class="navbar-brand text-light fw-bolder" href="#">SMFarming 
+              <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24">
+                <path fill="#fff" d="m10.55 16.55l4.875-4.325l-.275-.8l-3.6-.35l2.325-3.25l-.4-.425L8.6 11.75l.275.8l3.6.35l-2.35 3.225zM12 20q-1.4 0-2.637-.437T7.1 18.325l-2.1 2.1L3.575 19l2.1-2.1q-.8-1.025-1.237-2.262T4 12q0-3.35 2.325-5.675T12 4h8v8q0 3.35-2.325 5.675T12 20" />
+              </svg>
+            </a>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            </ul>
+              <button class="btn bg-warning text-light fw-bolder" type="submit">Keluar</button>
+          </div>
+        </div>
+      </nav>
+    
+    <!-- container body -->
+      <div class="container bg-tertiary">
+
+        <!-- sidebar -->
+        <div class="Sidebar d-flex flex-column flex-shrink-0 p-3 rounded">
+            <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+                <a href="#" class="Home nav-link fw-bolder mb-1 mt-2" style="display: flex; background-color: rgb(49, 134, 41);">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="white" d="M6 19h3v-6h6v6h3v-9l-6-4.5L6 10zm-2 2V9l8-6l8 6v12h-7v-6h-2v6zm8-8.75"/></svg>
+                <p style="color: white; margin-left: 6px;">Home</p>
+                </a>
+            </li>
+            <li>
+                <a href="karyawan.html" class="nav-link link-dark fw-bolder mb-1 mt-2" style="display: flex;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 48 48"><g fill="white"><path fill-rule="evenodd" d="M24.767 17.736c.376.17.794.264 1.233.264h4v-6h2v-2h-3.341a6 6 0 1 0-3.892 7.736M23 8c-1.48 0-2.773.804-3.465 2h6.93A3.998 3.998 0 0 0 23 8m3 8a1 1 0 0 1-1-1v-3h3v4z" clip-rule="evenodd"/><path d="M10 20a4 4 0 0 0-4 4v6a4 4 0 0 0 4 4h.054c.257 2.35 1.42 4.28 3.156 5.65c1.957 1.543 4.602 2.35 7.45 2.35c4.552 0 8.76-1.833 10.172-6.007a2.001 2.001 0 0 0 1.845-3.084l3.788-2.062l-.956-1.756l-4.856 2.643l-5.004-1.877h-.002A1 1 0 0 1 25 28.92V26a2 2 0 1 0-4 0v5a2 2 0 0 0 1.298 1.873l6.636 2.488C27.897 38.388 24.771 40 20.66 40c-2.487 0-4.671-.707-6.21-1.921c-1.313-1.035-2.184-2.456-2.398-4.218A4.002 4.002 0 0 0 15 30v-6a4 4 0 0 0-4-4h1.5a1 1 0 1 0 0-2h-4a1 1 0 1 0 0 2zm31.848 5.53l-1.696-1.06L36.696 30H42v-2h-1.696z"/><path d="M18 20a2 2 0 0 0-2 2v9.5a5.5 5.5 0 0 0 8.758 4.431l-3.162-1.186A4 4 0 0 1 19 31v-5a4 4 0 0 1 8 0v-3a3 3 0 0 0-3-3z"/></g></svg>
+                <p style="color: white; margin-left: 6px;">Karyawan</p>
+                </a>
+            </li>
+            <li>
+                <a href="monitoring.html" class="nav-link link-dark fw-bolder mb-1 mt-2" style="display: flex;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="white" d="M3 21v-2l2-2v4zm4 0v-6l2-2v8zm4 0v-8l2 2.025V21zm4 0v-5.975l2-2V21zm4 0V11l2-2v12zM3 15.825V13l7-7l4 4l7-7v2.825l-7 7l-4-4z"/></svg>
+                <p style="color: white;  margin-left: 6px;"> Monitoring</p>
+                </a>
+            </li>
+            <li>
+                <a href="panen.html" class="nav-link link-dark fw-bolder mb-1 mt-2" style="display: flex;">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 20 20"><path fill="white" d="M5.673 0a.7.7 0 0 1 .7.7v1.309h7.517v-1.3a.7.7 0 0 1 1.4 0v1.3H18a2 2 0 0 1 2 1.999v13.993A2 2 0 0 1 18 20H2a2 2 0 0 1-2-1.999V4.008a2 2 0 0 1 2-1.999h2.973V.699a.7.7 0 0 1 .7-.699M1.4 7.742v10.259a.6.6 0 0 0 .6.6h16a.6.6 0 0 0 .6-.6V7.756zm5.267 6.877v1.666H5v-1.666zm4.166 0v1.666H9.167v-1.666zm4.167 0v1.666h-1.667v-1.666zm-8.333-3.977v1.666H5v-1.666zm4.166 0v1.666H9.167v-1.666zm4.167 0v1.666h-1.667v-1.666zM4.973 3.408H2a.6.6 0 0 0-.6.6v2.335l17.2.014V4.008a.6.6 0 0 0-.6-.6h-2.71v.929a.7.7 0 0 1-1.4 0v-.929H6.373v.92a.7.7 0 0 1-1.4 0z"/></svg>
+                <p style="color: white; margin-left: 6px;">Panen</p>
+                </a>
+            </li>
+            </ul>
+        </div>
+
+        <!-- content -->
+          <div class="content bg-danger-emphasis mt-3 mb-3">
+              <div class="first">
+                  <h2>Home</h2>
+                  <div class="Mango bg-light rounded-3" onclick="window.location.href='mangga.html'">
+                    <div class="fruit-img"><img src="img/mango.png" alt=""></div>
+                    <div class="fruit-text" style="margin-top: 10px;">
+                      <h2>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="blue" class="bi bi-droplet" viewBox="0 0 16 16">
+                          <path fill-rule="evenodd" d="M7.21.8C7.69.295 8 0 8 0q.164.544.371 1.038c.812 1.946 2.073 3.35 3.197 4.6C12.878 7.096 14 8.345 14 10a6 6 0 0 1-12 0C2 6.668 5.58 2.517 7.21.8m.413 1.021A31 31 0 0 0 5.794 3.99c-.726.95-1.436 2.008-1.96 3.07C3.304 8.133 3 9.138 3 10a5 5 0 0 0 10 0c0-1.201-.796-2.157-2.181-3.7l-.03-.032C9.75 5.11 8.5 3.72 7.623 1.82z"/>
+                          <path fill-rule="evenodd" d="M4.553 7.776c.82-1.641 1.717-2.753 2.093-3.13l.708.708c-.29.29-1.128 1.311-1.907 2.87z"/>
+                        </svg>20%
+                      </h2>
+                      <p>Area1</p>
+                    </div>
+                  </div>
+              </div>
+              <div class="contentB rounded-3">
+                <div class="Orange bg-light rounded-2" onclick="window.location.href='mangga.html'">
+                        <div class="fruit-img"><img src="img/orange.png" alt=""></div>
+                        <div class="fruit-text">
+                            <label id="orange-waterlevel">
+                                <h2 style="display: flex;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="blue" class="bi bi-droplet" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M7.21.8C7.69.295 8 0 8 0q.164.544.371 1.038c.812 1.946 2.073 3.35 3.197 4.6C12.878 7.096 14 8.345 14 10a6 6 0 0 1-12 0C2 6.668 5.58 2.517 7.21.8m.413 1.021A31 31 0 0 0 5.794 3.99c-.726.95-1.436 2.008-1.96 3.07C3.304 8.133 3 9.138 3 10a5 5 0 0 0 10 0c0-1.201-.796-2.157-2.181-3.7l-.03-.032C9.75 5.11 8.5 3.72 7.623 1.82z"/>
+                                        <path fill-rule="evenodd" d="M4.553 7.776c.82-1.641 1.717-2.753 2.093-3.13l.708.708c-.29.29-1.128 1.311-1.907 2.87z"/>
+                                    </svg>
+                                    20%
+                                </h2>
+                            </label>
+                            <p style="margin-left: 46px;">Area 1</p>
+                        </div>
+                    </div>
+                    <!-- anggur -->
+                    <div class="grape bg-light rounded-2" onclick="window.location.href='anggur.html'">
+                        <div class="fruit-img"><img src="img/grape.png" alt=""></div>
+                        <div class="fruit-text">
+                          <label id="grape-waterlevel">
+                            <h2>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="blue" class="bi bi-droplet" viewBox="0 0 16 16">
+                                  <path fill-rule="evenodd" d="M7.21.8C7.69.295 8 0 8 0q.164.544.371 1.038c.812 1.946 2.073 3.35 3.197 4.6C12.878 7.096 14 8.345 14 10a6 6 0 0 1-12 0C2 6.668 5.58 2.517 7.21.8m.413 1.021A31 31 0 0 0 5.794 3.99c-.726.95-1.436 2.008-1.96 3.07C3.304 8.133 3 9.138 3 10a5 5 0 0 0 10 0c0-1.201-.796-2.157-2.181-3.7l-.03-.032C9.75 5.11 8.5 3.72 7.623 1.82z"/>
+                                  <path fill-rule="evenodd" d="M4.553 7.776c.82-1.641 1.717-2.753 2.093-3.13l.708.708c-.29.29-1.128 1.311-1.907 2.87z"/>
+                                </svg>20%
+                              </h2>
+                          </label>  
+                        <p>Area 1</p>
+                        </div>
+                      </div>
+              </div>
+                <div class="tomato bg-light rounded-3" onclick="window.location.href='mangga.html'">
+                    <div class="fruit-img"><img src="img/tomato.png" alt=""></div>
+                    <div class="fruit-text" style="margin-top: 10px;" >
+                        <label id="tomato-waterlevel">
+                            <h2>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="blue" class="bi bi-droplet" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M7.21.8C7.69.295 8 0 8 0q.164.544.371 1.038c.812 1.946 2.073 3.35 3.197 4.6C12.878 7.096 14 8.345 14 10a6 6 0 0 1-12 0C2 6.668 5.58 2.517 7.21.8m.413 1.021A31 31 0 0 0 5.794 3.99c-.726.95-1.436 2.008-1.96 3.07C3.304 8.133 3 9.138 3 10a5 5 0 0 0 10 0c0-1.201-.796-2.157-2.181-3.7l-.03-.032C9.75 5.11 8.5 3.72 7.623 1.82z"/>
+                                <path fill-rule="evenodd" d="M4.553 7.776c.82-1.641 1.717-2.753 2.093-3.13l.708.708c-.29.29-1.128 1.311-1.907 2.87z"/>
+                                </svg>
+                                20%
+                            </h2>
+                        </label>
+                    <p>Area 1</p>
+                    </div>
+                </div>
+              <div class="avocado bg-light rounded-3" onclick="window.location.href='mangga.html'">
+                <div class="fruit-img"><img src="img/avocado.png" alt=""></div>
+                <div class="fruit-text" style="margin-top: 10px;">
+                    <label id="avocado-waterlevel">
+                        <h2>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="blue" class="bi bi-droplet" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M7.21.8C7.69.295 8 0 8 0q.164.544.371 1.038c.812 1.946 2.073 3.35 3.197 4.6C12.878 7.096 14 8.345 14 10a6 6 0 0 1-12 0C2 6.668 5.58 2.517 7.21.8m.413 1.021A31 31 0 0 0 5.794 3.99c-.726.95-1.436 2.008-1.96 3.07C3.304 8.133 3 9.138 3 10a5 5 0 0 0 10 0c0-1.201-.796-2.157-2.181-3.7l-.03-.032C9.75 5.11 8.5 3.72 7.623 1.82z"/>
+                            <path fill-rule="evenodd" d="M4.553 7.776c.82-1.641 1.717-2.753 2.093-3.13l.708.708c-.29.29-1.128 1.311-1.907 2.87z"/>
+                            </svg>
+                            20%
+                        </h2>
+                    </label>
+                  <p>Area 1</p>
+                </div>
+              </div>
+          </div>
+      </center>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var menuButton = document.querySelector(".menu");
+    
+        var sidebar = document.querySelector(".Sidebar");
+    
+        menuButton.addEventListener("click", function() {
+          var isSidebarCollapsed = sidebar.style.width === "80px";
+    
+          if (isSidebarCollapsed) {
+            sidebar.style.width = "250px";
+            var sidebarLinks = sidebar.querySelectorAll("p");
+            sidebarLinks.forEach(function(link) {
+              link.style.display = "block";
+            });
+          } 
+          else {
+            sidebar.style.width = "80px";
+            var sidebarLinks = sidebar.querySelectorAll("p");
+            sidebarLinks.forEach(function(link) {
+              link.style.display = "none";
+            });
+          }
+        });
+    
+        sidebar.style.transition = "width 0.3s";
+      });
+    </script>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</html>
