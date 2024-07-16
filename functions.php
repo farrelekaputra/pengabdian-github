@@ -12,7 +12,9 @@ function getAllData($tablename){
     $response = $client->request("GET", "https://smart-farming-40165-default-rtdb.firebaseio.com/$tablename.json");
 
     if($response->getStatusCode() == 200){
-        return json_decode($response->getBody(), true);
+        $result = json_decode($response->getBody(), true);
+        array_shift($result);
+        return $result;
     }
     return false;
 }

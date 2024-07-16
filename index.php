@@ -3,6 +3,7 @@
 include "functions.php";
 
 $id_tanaman = getSingleColumn('tanaman','id');
+$kelembapan_tanaman = getSingleColumn('tanaman','kelembapan');
 
 ?>
 
@@ -527,23 +528,21 @@ body {
           <div class="content bg-danger-emphasis mt-3 mb-3">
               <div class="first">
                   <h2>Home</h2>
-                  <a href="detail-tanaman.php?id=<?= $id_tanaman[0]?>">
-                  <div class="Mango bg-light rounded-3" onclick="window.location.href='detail-tanaman.php?id=<?$id_tanaman[0]?>'">
+                  <div class="Mango bg-light rounded-3" onclick="window.location.href='detail-tanaman.php?id=<?=$id_tanaman[0]?>'">
                     <div class="fruit-img"><img src="img/mango.png" alt=""></div>
                     <div class="fruit-text" style="margin-top: 10px;">
                       <h2>
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="blue" class="bi bi-droplet" viewBox="0 0 16 16">
                           <path fill-rule="evenodd" d="M7.21.8C7.69.295 8 0 8 0q.164.544.371 1.038c.812 1.946 2.073 3.35 3.197 4.6C12.878 7.096 14 8.345 14 10a6 6 0 0 1-12 0C2 6.668 5.58 2.517 7.21.8m.413 1.021A31 31 0 0 0 5.794 3.99c-.726.95-1.436 2.008-1.96 3.07C3.304 8.133 3 9.138 3 10a5 5 0 0 0 10 0c0-1.201-.796-2.157-2.181-3.7l-.03-.032C9.75 5.11 8.5 3.72 7.623 1.82z"/>
                           <path fill-rule="evenodd" d="M4.553 7.776c.82-1.641 1.717-2.753 2.093-3.13l.708.708c-.29.29-1.128 1.311-1.907 2.87z"/>
-                        </svg>20%
+                        </svg><?=$kelembapan_tanaman[0]?>%
                       </h2>
                       <p>Area1</p>
                     </div>
                   </div>
-                  </a>
               </div>
               <div class="contentB rounded-3">
-                <div class="Orange bg-light rounded-2" onclick="window.location.href='detail-tanaman.php?id=<?$id_tanaman[1]?>'">
+                <div class="Orange bg-light rounded-2" onclick="window.location.href='detail-tanaman.php?id=<?=$id_tanaman[1]?>'">
                         <div class="fruit-img"><img src="img/orange.png" alt=""></div>
                         <div class="fruit-text">
                             <label id="orange-waterlevel">
@@ -552,14 +551,14 @@ body {
                                         <path fill-rule="evenodd" d="M7.21.8C7.69.295 8 0 8 0q.164.544.371 1.038c.812 1.946 2.073 3.35 3.197 4.6C12.878 7.096 14 8.345 14 10a6 6 0 0 1-12 0C2 6.668 5.58 2.517 7.21.8m.413 1.021A31 31 0 0 0 5.794 3.99c-.726.95-1.436 2.008-1.96 3.07C3.304 8.133 3 9.138 3 10a5 5 0 0 0 10 0c0-1.201-.796-2.157-2.181-3.7l-.03-.032C9.75 5.11 8.5 3.72 7.623 1.82z"/>
                                         <path fill-rule="evenodd" d="M4.553 7.776c.82-1.641 1.717-2.753 2.093-3.13l.708.708c-.29.29-1.128 1.311-1.907 2.87z"/>
                                     </svg>
-                                    20%
+                                    <?=$kelembapan_tanaman[1]?>%
                                 </h2>
                             </label>
                             <p style="margin-left: 46px;">Area 1</p>
                         </div>
                     </div>
                     <!-- anggur -->
-                    <div class="grape bg-light rounded-2" onclick="window.location.href='detail-tanaman.php?id=<?$id_tanaman[2]?>'">
+                    <div class="grape bg-light rounded-2" onclick="window.location.href='detail-tanaman.php?id=<?=$id_tanaman[2]?>'">
                         <div class="fruit-img"><img src="img/grape.png" alt=""></div>
                         <div class="fruit-text">
                           <label id="grape-waterlevel">
@@ -567,14 +566,14 @@ body {
                                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="blue" class="bi bi-droplet" viewBox="0 0 16 16">
                                   <path fill-rule="evenodd" d="M7.21.8C7.69.295 8 0 8 0q.164.544.371 1.038c.812 1.946 2.073 3.35 3.197 4.6C12.878 7.096 14 8.345 14 10a6 6 0 0 1-12 0C2 6.668 5.58 2.517 7.21.8m.413 1.021A31 31 0 0 0 5.794 3.99c-.726.95-1.436 2.008-1.96 3.07C3.304 8.133 3 9.138 3 10a5 5 0 0 0 10 0c0-1.201-.796-2.157-2.181-3.7l-.03-.032C9.75 5.11 8.5 3.72 7.623 1.82z"/>
                                   <path fill-rule="evenodd" d="M4.553 7.776c.82-1.641 1.717-2.753 2.093-3.13l.708.708c-.29.29-1.128 1.311-1.907 2.87z"/>
-                                </svg>20%
+                                </svg><?=$kelembapan_tanaman[2]?>%
                               </h2>
                           </label>  
                         <p>Area 1</p>
                         </div>
                       </div>
               </div>
-                <div class="tomato bg-light rounded-3" onclick="window.location.href='detail-tanaman.php?id=<?$id_tanaman[3]?>'">
+                <div class="tomato bg-light rounded-3" onclick="window.location.href='detail-tanaman.php?id=<?=$id_tanaman[3]?>'">
                     <div class="fruit-img"><img src="img/tomato.png" alt=""></div>
                     <div class="fruit-text" style="margin-top: 10px;" >
                         <label id="tomato-waterlevel">
@@ -583,13 +582,13 @@ body {
                                 <path fill-rule="evenodd" d="M7.21.8C7.69.295 8 0 8 0q.164.544.371 1.038c.812 1.946 2.073 3.35 3.197 4.6C12.878 7.096 14 8.345 14 10a6 6 0 0 1-12 0C2 6.668 5.58 2.517 7.21.8m.413 1.021A31 31 0 0 0 5.794 3.99c-.726.95-1.436 2.008-1.96 3.07C3.304 8.133 3 9.138 3 10a5 5 0 0 0 10 0c0-1.201-.796-2.157-2.181-3.7l-.03-.032C9.75 5.11 8.5 3.72 7.623 1.82z"/>
                                 <path fill-rule="evenodd" d="M4.553 7.776c.82-1.641 1.717-2.753 2.093-3.13l.708.708c-.29.29-1.128 1.311-1.907 2.87z"/>
                                 </svg>
-                                20%
+                                <?=$kelembapan_tanaman[3]?>%
                             </h2>
                         </label>
                     <p>Area 1</p>
                     </div>
                 </div>
-              <div class="avocado bg-light rounded-3" onclick="window.location.href='detail-tanaman.php?id=<?$id_tanaman[4]?>'">
+              <div class="avocado bg-light rounded-3" onclick="window.location.href='detail-tanaman.php?id=<?=$id_tanaman[4]?>'">
                 <div class="fruit-img"><img src="img/avocado.png" alt=""></div>
                 <div class="fruit-text" style="margin-top: 10px;">
                     <label id="avocado-waterlevel">
@@ -598,7 +597,7 @@ body {
                             <path fill-rule="evenodd" d="M7.21.8C7.69.295 8 0 8 0q.164.544.371 1.038c.812 1.946 2.073 3.35 3.197 4.6C12.878 7.096 14 8.345 14 10a6 6 0 0 1-12 0C2 6.668 5.58 2.517 7.21.8m.413 1.021A31 31 0 0 0 5.794 3.99c-.726.95-1.436 2.008-1.96 3.07C3.304 8.133 3 9.138 3 10a5 5 0 0 0 10 0c0-1.201-.796-2.157-2.181-3.7l-.03-.032C9.75 5.11 8.5 3.72 7.623 1.82z"/>
                             <path fill-rule="evenodd" d="M4.553 7.776c.82-1.641 1.717-2.753 2.093-3.13l.708.708c-.29.29-1.128 1.311-1.907 2.87z"/>
                             </svg>
-                            20%
+                            <?=$kelembapan_tanaman[4]?>%
                         </h2>
                     </label>
                   <p>Area 1</p>
