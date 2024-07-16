@@ -17,7 +17,7 @@ function getAllData($tablename){
     return false;
 }
 
-function getSingleData($tablename, $id){
+function getSingleRow($tablename, $id){
     global $client;
 
     $response = $client->request("GET", "https://smart-farming-40165-default-rtdb.firebaseio.com/$tablename/$id.json");
@@ -26,4 +26,15 @@ function getSingleData($tablename, $id){
         return json_decode($response->getBody(), true);
     }
     return false;
+}
+function getSingleColumn($tablename, $column){
+    $all_data=getAllData('tanaman');
+
+    $result = [];
+
+    foreach($all_data as $single_data) {
+        $result[] = $single_data["$column"];
+    }
+
+    return !empty($result) ? $result : false;
 }

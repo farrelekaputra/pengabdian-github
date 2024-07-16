@@ -1,3 +1,12 @@
+<?php 
+
+var_dump($_GET['id']);
+die();
+
+$data_tanaman = getSingleData('tanaman','')
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,7 +52,7 @@ body {
 img{
     padding: 1rem;
     border-radius: 5% !important;
-    border: .5rem solid  #9970e4;
+    border: .5rem solid #FAB02F;
     color: #fff;
     /* border-image: linear-gradient(to bottom, #FAB02F, #D28908) 1; */
 }
@@ -53,19 +62,19 @@ img{
 .status div p label{
     font-weight: bolder;
 }
-.grape-pemupukan{
+.mango-pemupukan{
     width: 150%;
 }
-.grape-kelembapan{
+.mango-kelembapan{
     width: 150%;
 }
-.grape-kelembapan p{
+.mango-kelembapan p{
     margin-left: 10px;
 }
-.grape-panen{
+.mango-panen{
     width: 150%;
 }
-.grape-panen p{
+.mango-panen p{
     margin-left: 10px;
 }
 .bottom-content{
@@ -142,10 +151,10 @@ img{
             <div class="top-content d-flex">
                 <div class="top-left">
                     <header>
-                        <h1>anggur</h1>
+                        <h1>Mangga</h1>
                         <!-- Mangifera indica -->
                         <div class="rounded">
-                            <img src="img/grape.png" alt="anggur.png" width="60%">
+                            <img src="img/mango.png" alt="manggo.png" width="60%">
                         </div>
                     </header>
                 </div>
@@ -153,37 +162,37 @@ img{
                     <div class="status">
                         <header>
                             <h2 class="h2" style="margin-bottom: 20px !important;">Status</h2>
-                        <div class="grape-kelembapan d-flex" id="grape-kelembapan">
+                        <div class="mango-kelembapan d-flex" id="mango-kelembapan">
                             <div class="icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="blue" class="bi bi-droplet" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M7.21.8C7.69.295 8 0 8 0q.164.544.371 1.038c.812 1.946 2.073 3.35 3.197 4.6C12.878 7.096 14 8.345 14 10a6 6 0 0 1-12 0C2 6.668 5.58 2.517 7.21.8m.413 1.021A31 31 0 0 0 5.794 3.99c-.726.95-1.436 2.008-1.96 3.07C3.304 8.133 3 9.138 3 10a5 5 0 0 0 10 0c0-1.201-.796-2.157-2.181-3.7l-.03-.032C9.75 5.11 8.5 3.72 7.623 1.82z"/>
                                     <path fill-rule="evenodd" d="M4.553 7.776c.82-1.641 1.717-2.753 2.093-3.13l.708.708c-.29.29-1.128 1.311-1.907 2.87z"/>
                                   </svg>
                             </div>
-                            <p>kelembapan Tanah <label for="grape-kelembapan" id="grape-kelembapan">40%</label></p>
+                            <p>mango-kelembapan Tanah <label for="mango-kelembapan" id="mango-kelembapan-mangga">40%</label></p>
                         </div>
-                        <div class="grape-pemupukan d-flex" id="grape-pemupukan">
+                        <div class="mango-pemupukan d-flex" id="mango-pemupukan">
                             <div class="icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" style="margin-right: 10px;">
                                     <path fill="orange" d="M23 4.1V2.3l-1.8-.2c-.1 0-.7-.1-1.7-.1c-4.1 0-7.1 1.2-8.8 3.3C9.4 4.5 7.6 4 5.5 4c-1 0-1.7.1-1.7.1l-1.9.3l.1 1.7c.1 3 1.6 8.7 6.8 8.7H9v3.4c-3.8.5-7 1.8-7 1.8v2h20v-2s-3.2-1.3-7-1.8V15c6.3-.1 8-7.2 8-10.9M12 18h-1v-5.6S10.8 9 8 9c0 0 1.5.8 1.9 3.7c-.4.1-.8.1-1.1.1C4.2 12.8 4 6.1 4 6.1S4.6 6 5.5 6c1.9 0 5 .4 5.9 3.1C11.9 4.6 17 4 19.5 4c.9 0 1.5.1 1.5.1s0 9-6.3 9H14c0-2 2-5 2-5c-3 1-3 4.9-3 4.9v5z" />
                                 </svg>
                             </div>
-                            <p>Status pemupukan <label for="grape-pemupukan" id="grape-pemupukan">30%</label></p>
+                            <p>Status mango-pemupukan <label for="mango-pemupukan" id="mango-pemupukan-mangga">30%</label></p>
                         </div>
-                        <div class="grape-panen d-flex" id="grape-panen">
+                        <div class="mango-panen d-flex" id="mango-panen">
                             <div class="icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 0 20 20">
                                     <path fill="grey" d="M5.673 0a.7.7 0 0 1 .7.7v1.309h7.517v-1.3a.7.7 0 0 1 1.4 0v1.3H18a2 2 0 0 1 2 1.999v13.993A2 2 0 0 1 18 20H2a2 2 0 0 1-2-1.999V4.008a2 2 0 0 1 2-1.999h2.973V.699a.7.7 0 0 1 .7-.699M1.4 7.742v10.259a.6.6 0 0 0 .6.6h16a.6.6 0 0 0 .6-.6V7.756zm5.267 6.877v1.666H5v-1.666zm4.166 0v1.666H9.167v-1.666zm4.167 0v1.666h-1.667v-1.666zm-8.333-3.977v1.666H5v-1.666zm4.166 0v1.666H9.167v-1.666zm4.167 0v1.666h-1.667v-1.666zM4.973 3.408H2a.6.6 0 0 0-.6.6v2.335l17.2.014V4.008a.6.6 0 0 0-.6-.6h-2.71v.929a.7.7 0 0 1-1.4 0v-.929H6.373v.92a.7.7 0 0 1-1.4 0z"/>
                                 </svg>
                             </div>
-                            <p> Tanggal panen <label for="date" id="tanggal-angguro-panen">dd-mm-yyyy</label></p>
+                            <p> Tanggal mango-panen <label for="date" id="tanggal-mango-panen">dd-mm-yyyy</label></p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="bottom-content">
                 <p>
-                    anggur (Mangifera indica L) Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi autem quis nihil voluptate vel quam similique aliquam, incidunt hic totam amet quibusdam officia aliquid aperiam cupiditate obcaecati, repellat doloribus est!
+                    Mangga (Mangifera indica L) Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi autem quis nihil voluptate vel quam similique aliquam, incidunt hic totam amet quibusdam officia aliquid aperiam cupiditate obcaecati, repellat doloribus est!
                 </p>
             </div>
         </div>
