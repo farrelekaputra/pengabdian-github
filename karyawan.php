@@ -143,7 +143,7 @@ td img{
                 <tbody>
                   <?php foreach($data_karyawan as $data): ?>
                     <tr>
-                      <th scope="row"><a href="karyawan-detail.html"><?php printf("%03d",$data['id'])?></a></th>
+                      <th scope="row"><a href="karyawan-detail.php?id=<?=$data['id']?>"><?php printf("%03d",$data['id'])?></a></th>
                       <td id="nama-karyawan"><?=$data['nama']?></td>
                       <td id="area-karyawan"><?="Area ".$data['area']?></td>
                       <td id="foto-karyawan"><img src="img/<?=$data['gambar']?>" alt="<?=$data['nama']?>" class="budi-img">

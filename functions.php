@@ -43,3 +43,7 @@ function getSingleColumn($tablename, $column){
 
     return !empty($result) ? $result : false;
 }
+
+function login($username){
+    
+}

@@ -1,3 +1,9 @@
+<?php 
+
+
+
+?>
+
 <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: rgba(224,224,224);">
         <div class="container-fluid mt-n2 p-2" style="
           background-color: rgba(50, 205, 50, 0);
