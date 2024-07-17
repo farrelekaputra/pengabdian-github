@@ -257,7 +257,7 @@ body {
     .content{
         display: flex;
         flex-direction: column;
-        margin-left: -3rem;
+        margin-left: 3.6rem;
         display: flex;
         align-items: center;
         justify-content: space-around;
@@ -276,7 +276,7 @@ body {
         padding: 10px;
         display: flex;
         flex-direction: row;
-        width: 15rem;
+        width: 18rem;
         height: 7rem;
         border-right: .6rem solid;
         box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
@@ -309,7 +309,7 @@ body {
         padding: 10px;
         display: flex;
         flex-direction: row;
-        width: 15rem;
+        width: 18rem;
         height: 7rem;
         border-right: .6rem solid;
         box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
@@ -342,7 +342,7 @@ body {
         padding: 10px;
         display: flex;
         flex-direction: row;
-        width: 15rem;
+        width: 18rem;
         height: 7rem;
         border-right: .6rem solid;
         box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
@@ -377,12 +377,13 @@ body {
         justify-content: center;
         gap: 1rem;
         height: auto;
+        margin-left: -3rem;
     }
     .contentB > .Orange{
         padding: 10px;
         display: flex;
         flex-direction: row;
-        width: 15rem;
+        width: 18rem;
         height: 7rem;
         flex-wrap: wrap;
         border-right: .6rem solid;
@@ -425,7 +426,7 @@ body {
         display: flex;
         flex-direction: column;
         gap: 60px;
-        width: 15rem;
+        width: 18rem;
         height: 7rem;
         flex-wrap: wrap;
         border-right: .6rem solid;
