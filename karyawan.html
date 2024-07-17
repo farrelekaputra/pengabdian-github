@@ -82,6 +82,7 @@ td img{
         z-index: 9999;
         background-color: rgba(50, 205, 50, 0);
         background-image: linear-gradient(to bottom, rgb(61, 117, 61), #1a3423);
+        position: fixed;
     }
     .sidebar ul li{
         display: flex;
@@ -100,11 +101,14 @@ td img{
     .content{
         display: flex;
         flex-direction: column;
-        margin-left: 1rem;
+        margin-left: 6rem;
         display: flex;
         align-items: center;
         justify-content: space-around;
         gap: 1rem;
+    }
+    .table{
+      width: 22rem;
     }
 }
 </style>
@@ -141,7 +145,7 @@ td img{
         <div class="Sidebar d-flex flex-column flex-shrink-0 p-3 rounded mt-3">
           <ul class="nav nav-pills flex-column mb-auto">
           <li class="nav-item">
-              <a href="dashboard.html" class="Home nav-link fw-bolder mb-1 mt-2" style="display: flex;">
+              <a href="index.php" class="Home nav-link fw-bolder mb-1 mt-2" style="display: flex;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path fill="white" d="M6 19h3v-6h6v6h3v-9l-6-4.5L6 10zm-2 2V9l8-6l8 6v12h-7v-6h-2v6zm8-8.75"/></svg>
               <p style="color: white; margin-left: 6px;">Home</p>
               </a>
