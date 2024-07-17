@@ -607,32 +607,32 @@ body {
       </center>
     </div>
     <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        var menuButton = document.querySelector(".menu");
-    
-        var sidebar = document.querySelector(".Sidebar");
-    
-        menuButton.addEventListener("click", function() {
-          var isSidebarCollapsed = sidebar.style.width === "80px";
-    
-          if (isSidebarCollapsed) {
-            sidebar.style.width = "250px";
-            var sidebarLinks = sidebar.querySelectorAll("p");
-            sidebarLinks.forEach(function(link) {
-              link.style.display = "block";
-            });
-          } 
-          else {
-            sidebar.style.width = "80px";
-            var sidebarLinks = sidebar.querySelectorAll("p");
-            sidebarLinks.forEach(function(link) {
-              link.style.display = "none";
-            });
-          }
+        document.addEventListener("DOMContentLoaded", function() {
+          var menuButton = document.querySelector(".menu");
+      
+          var sidebar = document.querySelector(".Sidebar");
+      
+          menuButton.addEventListener("click", function() {
+            var isSidebarCollapsed = sidebar.style.width === "80px";
+      
+            if (isSidebarCollapsed) {
+              sidebar.style.width = "250px";
+              var sidebarLinks = sidebar.querySelectorAll("p");
+              sidebarLinks.forEach(function(link) {
+                link.style.display = "block";
+              });
+            } 
+            else {
+              sidebar.style.width = "80px";
+              var sidebarLinks = sidebar.querySelectorAll("p");
+              sidebarLinks.forEach(function(link) {
+                link.style.display = "none";
+              });
+            }
+          });
+      
+          sidebar.style.transition = "width 0.3s";
         });
-    
-        sidebar.style.transition = "width 0.3s";
-      });
     </script>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
