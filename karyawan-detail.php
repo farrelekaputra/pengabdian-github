@@ -1,3 +1,13 @@
+<?php 
+
+include "functions.php";
+
+$id = $_GET['id'];
+
+$data_karyawan = getSingleRow("karyawan","$id");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -128,13 +138,13 @@ img{
           margin-bottom: -8px;"
         >
             <div class="menu me-4" style="cursor:pointer">
-                <a href="karyawan.html">
+                <a href="karyawan.php">
                     <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
                         <path fill="#fff" d="m4 10l-.707.707L2.586 10l.707-.707zm17 8a1 1 0 1 1-2 0zM8.293 15.707l-5-5l1.414-1.414l5 5zm-5-6.414l5-5l1.414 1.414l-5 5zM4 9h10v2H4zm17 7v2h-2v-2zm-7-7a7 7 0 0 1 7 7h-2a5 5 0 0 0-5-5z" />
                     </svg>
                 </a>
             </div>
-            <a class="navbar-brand text-light fw-bolder" href="#">SMFarming 
+            <a class="navbar-brand text-light fw-bolder" href="index.php">SMFarming 
               <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24">
                 <path fill="#fff" d="m10.55 16.55l4.875-4.325l-.275-.8l-3.6-.35l2.325-3.25l-.4-.425L8.6 11.75l.275.8l3.6.35l-2.35 3.225zM12 20q-1.4 0-2.637-.437T7.1 18.325l-2.1 2.1L3.575 19l2.1-2.1q-.8-1.025-1.237-2.262T4 12q0-3.35 2.325-5.675T12 4h8v8q0 3.35-2.325 5.675T12 20" />
               </svg>
@@ -153,17 +163,17 @@ img{
             <div class="top-content d-flex">
                 <div class="top-left">
                     <header>
-                        <h1>Yogay</h1>
+                        <h1>Detail Karyawan</h1>
                         <!-- Mangifera indica -->
                         <div class="rounded">
-                            <img src="img/karyawan-5.jpg" alt="manggo.png" width="60%">
+                            <img src="img/<?=$data_karyawan['gambar']?>" alt="<?=$data_karyawan['nama']?>" width="60%">
                         </div>
                     </header>
                 </div>
                 <div class="top-right">
                     <div class="status">
                         <header>
-                            <h2 class="h2" style="margin-bottom: 20px !important;">ID : <label for="ID" id="id-karyawan">005</label></h2>
+                            <h2 class="h2" style="margin-bottom: 20px !important;">ID : <label for="ID" id="id-karyawan"><?php printf("%03d",$data_karyawan['id'])?></label></h2>
                         <div class="mango-kelembapan d-flex" id="mango-kelembapan">
                             <div class="icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 48 48">
@@ -173,7 +183,7 @@ img{
                                     </g>
                                 </svg>
                             </div>
-                            <p>Nama Karyawan<label for="karyawan-name" id="nama-karyawan">Yoga Saputra</label></p>
+                            <p>Nama Karyawan<label for="karyawan-name" id="nama-karyawan"><?=$data_karyawan['nama']?></label></p>
                         </div>
                         <div class="area-karyawan d-flex" id="area">
                             <div class="icon">
@@ -181,7 +191,7 @@ img{
                                     <path fill="#1e1e1e" d="M3 3.75a.75.75 0 0 1 1.5 0v6.258l3.65-1.922a.75.75 0 0 1 .73.018l3.82 2.246l5.6-4.2a.75.75 0 0 1 1.2.6V19.5h.75a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75zm1.5 7.953V19.5H18V8.25l-4.8 3.6a.75.75 0 0 1-.83.046L8.48 9.609z" />
                                 </svg>
                             </div>
-                            <p>Area Tugas<label for="karyawan-area" id="area-karyawan">Area Jeruk</label></p>
+                            <p>Area Tugas<label for="karyawan-area" id="area-karyawan"><?="Area ".$data_karyawan['area']?></label></p>
                         </div>
                         <div class="mango-panen d-flex" id="email">
                             <div class="icon">

@@ -1,9 +1,10 @@
 <?php 
 
-var_dump($_GET['id']);
-die();
+include "functions.php";
 
-$data_tanaman = getSingleData('tanaman','')
+$id = $_GET['id'];
+
+$data_tanaman = getSingleRow("tanaman","$id");
 
 ?>
 
@@ -18,7 +19,7 @@ $data_tanaman = getSingleData('tanaman','')
 <style>
     html{
     background-color: rgba(224,224,224);
-    overflow-x: hidden;
+    overflow-x: hidden;,
 }
 body {
     font-family: var(--bs-font-sans-serif);
@@ -120,29 +121,8 @@ img{
 </style>
 <body>   
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: rgba(224,224,224);">
-        <div class="container-fluid mt-n2 p-2" style="
-          background-color: rgba(50, 205, 50, 0);
-          background-image: linear-gradient(to bottom, rgb(61, 117, 61), #2b5339); 
-          margin-top: -8px; 
-          margin-bottom: -8px;"
-        >
-            <div class="menu me-4" style="cursor:pointer">
-                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="white" class="bi bi-list-ul" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
-                </svg>
-            </div>
-            <a class="navbar-brand text-light fw-bolder" href="#">SMFarming 
-              <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24">
-                <path fill="#fff" d="m10.55 16.55l4.875-4.325l-.275-.8l-3.6-.35l2.325-3.25l-.4-.425L8.6 11.75l.275.8l3.6.35l-2.35 3.225zM12 20q-1.4 0-2.637-.437T7.1 18.325l-2.1 2.1L3.575 19l2.1-2.1q-.8-1.025-1.237-2.262T4 12q0-3.35 2.325-5.675T12 4h8v8q0 3.35-2.325 5.675T12 20" />
-              </svg>
-            </a>
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            </ul>
-              <button class="btn bg-warning text-light fw-bolder" type="submit">Keluar</button>
-          </div>
-        </div>
-      </nav>
+    
+    <?php include "component/navbar.php" ?>
     
     <!-- container body -->
       <div class="container bg-tertiary">
@@ -151,10 +131,10 @@ img{
             <div class="top-content d-flex">
                 <div class="top-left">
                     <header>
-                        <h1>Mangga</h1>
+                        <h1><?=$data_tanaman['nama']?></h1>
                         <!-- Mangifera indica -->
                         <div class="rounded">
-                            <img src="img/mango.png" alt="manggo.png" width="60%">
+                            <img src="img/<?=$data_tanaman['gambar']?>" alt="<?=$data_tanaman['gambar']?>" width="60%">
                         </div>
                     </header>
                 </div>
@@ -169,7 +149,7 @@ img{
                                     <path fill-rule="evenodd" d="M4.553 7.776c.82-1.641 1.717-2.753 2.093-3.13l.708.708c-.29.29-1.128 1.311-1.907 2.87z"/>
                                   </svg>
                             </div>
-                            <p>mango-kelembapan Tanah <label for="mango-kelembapan" id="mango-kelembapan-mangga">40%</label></p>
+                            <p>Kelembapan Tanah <label for="mango-kelembapan" id="mango-kelembapan-mangga"><?=$data_tanaman['kelembapan']?>%</label></p>
                         </div>
                         <div class="mango-pemupukan d-flex" id="mango-pemupukan">
                             <div class="icon">
@@ -177,7 +157,7 @@ img{
                                     <path fill="orange" d="M23 4.1V2.3l-1.8-.2c-.1 0-.7-.1-1.7-.1c-4.1 0-7.1 1.2-8.8 3.3C9.4 4.5 7.6 4 5.5 4c-1 0-1.7.1-1.7.1l-1.9.3l.1 1.7c.1 3 1.6 8.7 6.8 8.7H9v3.4c-3.8.5-7 1.8-7 1.8v2h20v-2s-3.2-1.3-7-1.8V15c6.3-.1 8-7.2 8-10.9M12 18h-1v-5.6S10.8 9 8 9c0 0 1.5.8 1.9 3.7c-.4.1-.8.1-1.1.1C4.2 12.8 4 6.1 4 6.1S4.6 6 5.5 6c1.9 0 5 .4 5.9 3.1C11.9 4.6 17 4 19.5 4c.9 0 1.5.1 1.5.1s0 9-6.3 9H14c0-2 2-5 2-5c-3 1-3 4.9-3 4.9v5z" />
                                 </svg>
                             </div>
-                            <p>Status mango-pemupukan <label for="mango-pemupukan" id="mango-pemupukan-mangga">30%</label></p>
+                            <p>Status pemupukan <label for="mango-pemupukan" id="mango-pemupukan-mangga">30%</label></p>
                         </div>
                         <div class="mango-panen d-flex" id="mango-panen">
                             <div class="icon">
@@ -185,14 +165,14 @@ img{
                                     <path fill="grey" d="M5.673 0a.7.7 0 0 1 .7.7v1.309h7.517v-1.3a.7.7 0 0 1 1.4 0v1.3H18a2 2 0 0 1 2 1.999v13.993A2 2 0 0 1 18 20H2a2 2 0 0 1-2-1.999V4.008a2 2 0 0 1 2-1.999h2.973V.699a.7.7 0 0 1 .7-.699M1.4 7.742v10.259a.6.6 0 0 0 .6.6h16a.6.6 0 0 0 .6-.6V7.756zm5.267 6.877v1.666H5v-1.666zm4.166 0v1.666H9.167v-1.666zm4.167 0v1.666h-1.667v-1.666zm-8.333-3.977v1.666H5v-1.666zm4.166 0v1.666H9.167v-1.666zm4.167 0v1.666h-1.667v-1.666zM4.973 3.408H2a.6.6 0 0 0-.6.6v2.335l17.2.014V4.008a.6.6 0 0 0-.6-.6h-2.71v.929a.7.7 0 0 1-1.4 0v-.929H6.373v.92a.7.7 0 0 1-1.4 0z"/>
                                 </svg>
                             </div>
-                            <p> Tanggal mango-panen <label for="date" id="tanggal-mango-panen">dd-mm-yyyy</label></p>
+                            <p> Tanggal panen <label for="date" id="tanggal-mango-panen">dd-mm-yyyy</label></p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="bottom-content">
                 <p>
-                    Mangga (Mangifera indica L) Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi autem quis nihil voluptate vel quam similique aliquam, incidunt hic totam amet quibusdam officia aliquid aperiam cupiditate obcaecati, repellat doloribus est!
+                <?=$data_tanaman['dekskripsi']?>
                 </p>
             </div>
         </div>
