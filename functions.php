@@ -5,11 +5,13 @@ require "vendor/autoload.php";
 use GuzzleHttp\Client;
 
 $client = new Client();
+$endpoint = "https://smart-farming-40165-default-rtdb.firebaseio.com";
 
 function getAllData($tablename){
     global $client;
+    global $endpoint;
 
-    $response = $client->request("GET", "https://smart-farming-40165-default-rtdb.firebaseio.com/$tablename.json");
+    $response = $client->request("GET", $endpoint."/$tablename.json");
 
     if($response->getStatusCode() == 200){
         $result = json_decode($response->getBody(), true);
@@ -21,8 +23,9 @@ function getAllData($tablename){
 
 function getSingleRow($tablename, $id){
     global $client;
+    global $endpoint;
 
-    $response = $client->request("GET", "https://smart-farming-40165-default-rtdb.firebaseio.com/$tablename/$id.json");
+    $response = $client->request("GET", $endpoint."/$tablename/$id.json");
 
     if($response->getStatusCode() == 200){
         return json_decode($response->getBody(), true);
@@ -39,4 +42,8 @@ function getSingleColumn($tablename, $column){
     }
 
     return !empty($result) ? $result : false;
+}
+
+function login($username){
+    
 }
