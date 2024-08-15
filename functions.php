@@ -11,7 +11,7 @@ function getAllData($tablename){
     global $client;
     global $endpoint;
 
-    $response = $client->request("GET", $endpoint."/$tablename.json");
+    $response = $client->request("GET", "$endpoint/$tablename.json");
 
     if($response->getStatusCode() == 200){
         $result = json_decode($response->getBody(), true);
@@ -25,7 +25,7 @@ function getSingleRow($tablename, $id){
     global $client;
     global $endpoint;
 
-    $response = $client->request("GET", $endpoint."/$tablename/$id.json");
+    $response = $client->request("GET", "$endpoint/$tablename/$id.json");
 
     if($response->getStatusCode() == 200){
         return json_decode($response->getBody(), true);
