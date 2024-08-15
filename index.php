@@ -1,6 +1,10 @@
 <?php 
 
 include "functions.php";
+session_start();
+
+var_dump($_SESSION);
+die();
 
 $id_tanaman = getSingleColumn('tanaman','id');
 $kelembapan_tanaman = getSingleColumn('tanaman','kelembapan');

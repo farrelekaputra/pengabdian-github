@@ -5,6 +5,85 @@ require "vendor/autoload.php";
 use GuzzleHttp\Client;
 
 $client = new Client();
+$link = "http://localhost:3000";
+
+function login($email, $password) {
+    global $client;
+    global $link;
+
+    $endpoint = "$link/api/auth/login";
+
+    try {
+        $response = $client->post($endpoint, [
+            'json' => [
+                'email' => $email,
+                'password' => $password
+            ]
+        ]);
+
+        $statusCode = $response->getStatusCode();
+        $responseBody = json_decode($response->getBody()->getContents(), true);
+
+        if ($statusCode == 200 && isset($responseBody['token'])) {
+            return [
+                'status' => $statusCode,
+                'token' => $responseBody['token']
+            ];
+        } else {
+            return [
+                'status' => $statusCode,
+                'error' => 'Unexpected response structure'
+            ];
+        }
+    } catch (\GuzzleHttp\Exception\ClientException $e) {
+        $statusCode = $e->getResponse()->getStatusCode();
+        $error = $e->getResponse()->getBody()->getContents();
+        $errorData = json_decode($error, true);
+
+        return [
+            'status' => $statusCode,
+            'error' => $errorData['message'] ?? 'Unknown error'
+        ];
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 $endpoint = "https://smart-farming-40165-default-rtdb.firebaseio.com";
 
 function getAllData($tablename){
@@ -42,8 +121,4 @@ function getSingleColumn($tablename, $column){
     }
 
     return !empty($result) ? $result : false;
-}
-
-function login($username){
-    
 }
