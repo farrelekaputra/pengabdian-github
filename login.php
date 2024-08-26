@@ -8,16 +8,14 @@ if (isset($_POST['login'])) {
 
     
     if ($res['status'] != 200) {
-        // Set pesan kesalahan dalam session
+        
         $_SESSION['login_error'] = 'Login gagal, coba lagi';
-        // Redirect ke halaman login
         header("Location: login.php");
         exit();
     } else {
-        // Login berhasil, simpan token dalam session atau lakukan aksi lain
         $_SESSION['token'] = $res['token'];
 
-        header("Location: index.php"); // Redirect ke halaman sukses setelah login
+        header("Location: index.php"); 
         exit();
     }
 }
