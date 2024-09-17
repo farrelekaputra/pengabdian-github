@@ -2,7 +2,8 @@
 
 include "functions.php";
 
-$data_karyawan = getAllData('karyawan');
+$data_karyawan = getAllData('users');
+
 $activePage = "karyawan";
 
 ?>
@@ -134,19 +135,19 @@ td img{
             <table class="table table-striped">
                 <thead>
                   <tr>
-                    <th scope="col">ID</th>
+                    <th scope="col">Email</th>
                     <th scope="col">Nama Karyawan</th>
                     <th scope="col">Area Penugasan</th>
                     <th scope="col" class="foto-karyawan"> </th>
                   </tr>
                 </thead>
                 <tbody>
-                  <?php foreach($data_karyawan as $data): ?>
+                  <?php foreach($data_karyawan as $id => $data): ?>
                     <tr>
-                      <th scope="row"><a href="karyawan-detail.php?id=<?=$data['id']?>"><?php printf("%03d",$data['id'])?></a></th>
-                      <td id="nama-karyawan"><?=$data['nama']?></td>
-                      <td id="area-karyawan"><?="Area ".$data['area']?></td>
-                      <td id="foto-karyawan"><img src="img/<?=$data['gambar']?>" alt="<?=$data['nama']?>" class="budi-img">
+                      <th scope="row"><a href="karyawan-detail.php?id=<?=$id?>"><?= $data['email'] ?></a></th>
+                      <td id="nama-karyawan"><?=$data['username']?></td>
+                      <td id="area-karyawan"><?="Area ".$data['areaKaryawan']?></td>
+                      <td id="foto-karyawan"><img src="img/<?= isset($data['gambar']) ? $data['gambar'] : "karyawan-1.jpg" ?>" alt="<?=$data['username']?>" class="budi-img">
                       </td>
                     </tr>
                   <?php endforeach; ?>

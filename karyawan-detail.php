@@ -4,7 +4,7 @@ include "functions.php";
 
 $id = $_GET['id'];
 
-$data_karyawan = getSingleRow("karyawan","$id");
+$data_karyawan = getSingleRow("users","$id");
 
 ?>
 
@@ -166,14 +166,14 @@ img{
                         <h1>Detail Karyawan</h1>
                         <!-- Mangifera indica -->
                         <div class="rounded">
-                            <img src="img/<?=$data_karyawan['gambar']?>" alt="<?=$data_karyawan['nama']?>" width="60%">
+                            <img src="img/karyawan-1.jpg" alt="<?=$data_karyawan['username']?>"  width="60%">
                         </div>
                     </header>
                 </div>
                 <div class="top-right">
                     <div class="status">
                         <header>
-                            <h2 class="h2" style="margin-bottom: 20px !important;">ID : <label for="ID" id="id-karyawan"><?php printf("%03d",$data_karyawan['id'])?></label></h2>
+                            <h2 class="h2" style="margin-bottom: 20px !important;">ID : <label for="ID" id="id-karyawan"><?=$_GET['id']?></label></h2>
                         <div class="mango-kelembapan d-flex" id="mango-kelembapan">
                             <div class="icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 48 48">
@@ -183,7 +183,7 @@ img{
                                     </g>
                                 </svg>
                             </div>
-                            <p>Nama Karyawan<label for="karyawan-name" id="nama-karyawan"><?=$data_karyawan['nama']?></label></p>
+                            <p>Nama Karyawan<label for="karyawan-name" id="nama-karyawan"><?=$data_karyawan['username']?></label></p>
                         </div>
                         <div class="area-karyawan d-flex" id="area">
                             <div class="icon">
@@ -191,7 +191,7 @@ img{
                                     <path fill="#1e1e1e" d="M3 3.75a.75.75 0 0 1 1.5 0v6.258l3.65-1.922a.75.75 0 0 1 .73.018l3.82 2.246l5.6-4.2a.75.75 0 0 1 1.2.6V19.5h.75a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75zm1.5 7.953V19.5H18V8.25l-4.8 3.6a.75.75 0 0 1-.83.046L8.48 9.609z" />
                                 </svg>
                             </div>
-                            <p>Area Tugas<label for="karyawan-area" id="area-karyawan"><?="Area ".$data_karyawan['area']?></label></p>
+                            <p>Area Tugas<label for="karyawan-area" id="area-karyawan"><?=$data_karyawan['areaKaryawan']?></label></p>
                         </div>
                         <div class="mango-panen d-flex" id="email">
                             <div class="icon">
@@ -199,7 +199,7 @@ img{
                                     <path fill="#1e1e1e" d="M4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.587 1.413T20 20zm8-7L4 8v10h16V8zm0-2l8-5H4zM4 8V6v12z" />
                                 </svg>
                             </div>
-                            <p>Email Karyawan<label for="date" id="email-karyawan">yogasaputr@gmail.com</label></p>
+                            <p>Email Karyawan<label for="date" id="email-karyawan"><?=$data_karyawan['email']?></label></p>
                         </div>
                     </div>
                 </div>
