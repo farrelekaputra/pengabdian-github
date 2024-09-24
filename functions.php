@@ -3,6 +3,7 @@
 require "vendor/autoload.php";
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\RequestException;
 
 $client = new Client();
 $link = "http://localhost:3000";
@@ -46,6 +47,40 @@ function login($email, $password) {
         ];
     }
 }
+
+function getDataTanaman($token, $username) {
+    global $link;
+
+    // Membuat instance Guzzle Client
+    $client = new Client();
+
+    // Membuat header Authorization dengan Bearer Token
+    $headers = [
+        'Authorization' => 'Bearer ' . $token,
+        'Accept'        => 'application/json'
+    ];
+
+    // URL endpoint
+    $url = $link . '/api/user/tanaman/by-username/' . $username;
+
+    try {
+        // Mengirim request GET dengan header Authorization
+        $response = $client->request('GET', $url, [
+            'headers' => $headers
+        ]);
+
+        // Mengubah stream menjadi string
+        $body = $response->getBody();
+        $content = $body->getContents();  // Mengubah stream menjadi string
+
+        return $content;  // Mengembalikan konten respons sebagai string
+    } catch (RequestException $e) {
+        // Menangani error jika request gagal
+        return $e->getMessage();
+    }
+}
+
+
 
 
 

@@ -3,8 +3,7 @@
 include "functions.php";
 session_start();
 
-var_dump($_SESSION);
-die();
+$data_tanaman = getDataTanaman($_SESSION['token'], "Loki");
 
 $id_tanaman = getSingleColumn('tanaman','id');
 $kelembapan_tanaman = getSingleColumn('tanaman','kelembapan');
