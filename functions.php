@@ -6,7 +6,7 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 
 $client = new Client();
-$link = "http://localhost:3000";
+$link = "https://smart-farming-mu5mgd7zh-alifians-projects-30bb1aa5.vercel.app";
 
 function login($email, $password) {
     global $client;
@@ -48,39 +48,37 @@ function login($email, $password) {
     }
 }
 
-function getDataTanaman($token, $username) {
-    global $link;
+// function getDataTanaman($token, $username) {
+//     global $link;
 
-    // Membuat instance Guzzle Client
-    $client = new Client();
+//     // Membuat instance Guzzle Client
+//     $client = new Client();
 
-    // Membuat header Authorization dengan Bearer Token
-    $headers = [
-        'Authorization' => 'Bearer ' . $token,
-        'Accept'        => 'application/json'
-    ];
+//     // Membuat header Authorization dengan Bearer Token
+//     $headers = [
+//         'Authorization' => 'Bearer ' . $token,
+//         'Accept'        => 'application/json'
+//     ];
 
-    // URL endpoint
-    $url = $link . '/api/user/tanaman/by-username/' . $username;
+//     // URL endpoint
+//     $url = $link . '/api/user/tanaman/by-username/' . $username;
 
-    try {
-        // Mengirim request GET dengan header Authorization
-        $response = $client->request('GET', $url, [
-            'headers' => $headers
-        ]);
+//     try {
+//         // Mengirim request GET dengan header Authorization
+//         $response = $client->request('GET', $url, [
+//             'headers' => $headers
+//         ]);
 
-        // Mengubah stream menjadi string
-        $body = $response->getBody();
-        $content = $body->getContents();  // Mengubah stream menjadi string
+//         // Mengubah stream menjadi string
+//         $body = $response->getBody();
+//         $content = $body->getContents();  // Mengubah stream menjadi string
 
-        return $content;  // Mengembalikan konten respons sebagai string
-    } catch (RequestException $e) {
-        // Menangani error jika request gagal
-        return $e->getMessage();
-    }
-}
-
-
+//         return $content;  // Mengembalikan konten respons sebagai string
+//     } catch (RequestException $e) {
+//         // Menangani error jika request gagal
+//         return $e->getMessage();
+//     }
+// }
 
 
 
@@ -119,7 +117,9 @@ function getDataTanaman($token, $username) {
 
 
 
-$endpoint = "https://smart-farming-40165-default-rtdb.firebaseio.com";
+
+
+$endpoint = "https://smart-farming-d6d31-default-rtdb.firebaseio.com/";
 
 function getAllData($tablename){
     global $client;
@@ -129,7 +129,7 @@ function getAllData($tablename){
 
     if($response->getStatusCode() == 200){
         $result = json_decode($response->getBody(), true);
-        array_shift($result);
+        // array_shift($result);
         return $result;
     }
     return false;
@@ -147,12 +147,14 @@ function getSingleRow($tablename, $id){
     return false;
 }
 function getSingleColumn($tablename, $column){
-    $all_data=getAllData('tanaman');
+    $all_data=getAllData($tablename);
 
     $result = [];
 
     foreach($all_data as $single_data) {
-        $result[] = $single_data["$column"];
+        if ($single_data !== null) {
+            $result[] = $single_data["$column"];
+        } 
     }
 
     return !empty($result) ? $result : false;
