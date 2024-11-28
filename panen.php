@@ -240,12 +240,12 @@ nav{
 @media only screen and (max-width: 1200px){
     
     .Sidebar{
-        width: 80px;
         height: 28rem;
         margin-top: -10rem;
         z-index: 9999;
         background-color: rgba(50, 205, 50, 0);
         background-image: linear-gradient(to bottom, rgb(61, 117, 61), #1a3423);
+        position: fixed;
     }
     .sidebar ul li{
         display: flex;
@@ -264,7 +264,7 @@ nav{
     .content{
         display: flex;
         flex-direction: column;
-        margin-left: 1rem;
+        margin-left: 3.6rem;
         display: flex;
         align-items: center;
         justify-content: space-around;
@@ -283,7 +283,7 @@ nav{
         padding: 10px;
         display: flex;
         flex-direction: row;
-        width: 15rem;
+        width: 18rem;
         height: 7rem;
         border-right: .6rem solid;
         border-image: linear-gradient(to bottom, #FAB02F, #D28908) 1;
@@ -325,7 +325,7 @@ nav{
         padding: 10px;
         display: flex;
         flex-direction: row;
-        width: 15rem;
+        width: 18rem;
         height: 7rem;
         border-right: .6rem solid;
         border-image: linear-gradient(to bottom, #fd8383, #F35555) 1;
@@ -360,7 +360,7 @@ nav{
         padding: 10px;
         display: flex;
         flex-direction: row;
-        width: 15rem;
+        width: 18rem;
         height: 7rem;
         border-right: .6rem solid;
         border-image: linear-gradient(to bottom, #FAB02F, #D28908) 1;
@@ -396,12 +396,13 @@ nav{
         flex-direction: column;
         gap: 1rem;
         height: auto;
+        margin-left: -3rem;
     }
     .contentB > .orange{
         padding: 10px;
         display: flex;
         flex-direction: column;
-        width: 15rem;
+        width: 18rem;
         height: 7rem;
         flex-wrap: wrap;
         border-right: .6rem solid;
@@ -435,7 +436,7 @@ nav{
         display: flex;
         flex-direction: column;
         gap: 60px;
-        width: 15rem;
+        width: 18rem;
         height: 7rem;
         flex-wrap: wrap;
         border-right: .6rem solid;

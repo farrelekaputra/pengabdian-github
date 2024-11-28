@@ -246,12 +246,12 @@ nav{
 @media only screen and (max-width: 1200px){
     
     .Sidebar{
-        width: 80px;
         height: 28rem;
         margin-top: -10rem;
         z-index: 9999;
         background-color: rgba(50, 205, 50, 0);
         background-image: linear-gradient(to bottom, rgb(61, 117, 61), #1a3423);
+        position: fixed;
     }
     .sidebar ul li{
         display: flex;
@@ -270,7 +270,7 @@ nav{
     .content{
         display: flex;
         flex-direction: column;
-        margin-left: 1rem;
+        margin-left: 3.6rem;
         display: flex;
         align-items: center;
         justify-content: space-around;
@@ -289,7 +289,7 @@ nav{
         padding: 10px;
         display: flex;
         flex-direction: row;
-        width: 15rem;
+        width: 18rem;
         height: 7rem;
         border-right: .6rem solid;
         border-image: linear-gradient(to bottom, #FAB02F, #D28908) 1;
@@ -328,7 +328,7 @@ nav{
         padding: 10px;
         display: flex;
         flex-direction: row;
-        width: 15rem;
+        width: 18rem;
         height: 7rem;
         border-right: .6rem solid;
         border-image: linear-gradient(to bottom, #fd8383, #F35555) 1;
@@ -362,7 +362,7 @@ nav{
         padding: 10px;
         display: flex;
         flex-direction: row;
-        width: 15rem;
+        width: 18rem;
         height: 7rem;
         border-right: .6rem solid;
         border-image: linear-gradient(to bottom, #FAB02F, #D28908) 1;
@@ -397,13 +397,14 @@ nav{
         flex-direction: column;
         gap: 1rem;
         height: auto;
+        margin-left: -3rem;
     }
     .contentB > .orange{
         padding: 10px;
         display: flex;
         flex-direction: column;
         gap: 60px;
-        width: 15rem;
+        width: 18rem;
         height: 7rem;
         flex-wrap: wrap;
         border-right: .6rem solid;
@@ -439,7 +440,7 @@ nav{
         display: flex;
         flex-direction: column;
         gap: 60px;
-        width: 15rem;
+        width: 18rem;
         height: 7rem;
         flex-wrap: wrap;
         border-right: .6rem solid;
@@ -515,11 +516,6 @@ nav{
                           </g>
                         </svg>
                       </li>
-                      <li>
-                        <label id="mango-kelembapan">
-                          <p>satuan Ph</p>
-                        </label>
-                      </li>
                     </ul>
                   </div>
                   </div>
@@ -542,9 +538,6 @@ nav{
                               <path d="m3 15l.872.697a2.33 2.33 0 0 0 3.102-.171v0a2.33 2.33 0 0 1 3.164-.122l.18.154c.968.83 2.396.83 3.364 0l.18-.154a2.33 2.33 0 0 1 3.164.121v0a2.33 2.33 0 0 0 3.102.172L21 15m-.5 4l-.442.442c-.86.86-2.255.86-3.116 0v0a2.203 2.203 0 0 0-2.99-.114l-.27.23c-.968.83-2.396.83-3.364 0l-.27-.23a2.203 2.203 0 0 0-2.99.114v0c-.86.86-2.255.86-3.116 0L3.5 19" />
                             </g>
                           </svg>
-                        </li>
-                        <li>
-                          <p>Satuan Ph</p>
                         </li>
                       </ul>
                     </div>
@@ -570,9 +563,6 @@ nav{
                           </svg>
                         </li>
                         <li>
-                          <label id="grape-kelembapan">
-                            <p>Satuan Ph</p>
-                          </label>
                         </li>
                       </ul>
                     </div>
@@ -599,9 +589,6 @@ nav{
                       </svg>
                     </li>
                     <li>
-                      <label for="tomato-kelembapan">
-                        <p>Satuan Ph</p>
-                      </label>
                     </li>
                   </ul>
                 </div>
@@ -627,9 +614,6 @@ nav{
                       </svg>
                     </li>
                     <li>
-                      <label for="avocado-kelembapan">
-                        <p>Satuan Ph</p>
-                      </label>
                     </li>
                   </ul>
                 </div>
