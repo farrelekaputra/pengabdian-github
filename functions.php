@@ -5,45 +5,44 @@ require "vendor/autoload.php";
 use GuzzleHttp\Client;
 
 $client = new Client();
-$endpoint = "https://smart-farming-40165-default-rtdb.firebaseio.com";
+$link = "http://localhost:3000";
 
-function getAllData($tablename){
+function login($email, $password){
     global $client;
-    global $endpoint;
+    global $link;
 
-    $response = $client->request("GET", "$endpoint/$tablename.json");
+    $endpoint = "$link/api/auth/login";
 
-    if($response->getStatusCode() == 200){
-        $result = json_decode($response->getBody(), true);
-        array_shift($result);
-        return $result;
-    }
-    return false;
+    $body = [
+        'email' => $email,
+        'password' => $password,
+    ];
+
+    $res = $client->post($endpoint, [
+        'json' => $body,
+        'headers' => [
+            'Content-Type' => 'application/json',
+            'Accept'       => 'application/json',
+        ]
+    ]);
+
+    return $res->getBody();
 }
 
-function getSingleRow($tablename, $id){
+function getdataTanamanByAreaId($area, $id_karyawan, $bearerToken){
     global $client;
-    global $endpoint;
+    global $link;
 
-    $response = $client->request("GET", "$endpoint/$tablename/$id.json");
+    $headers = [
+        'Authorization' => "Bearer $bearerToken",
+        'Accept'        => 'application/json',
+    ];
 
-    if($response->getStatusCode() == 200){
-        return json_decode($response->getBody(), true);
-    }
-    return false;
-}
-function getSingleColumn($tablename, $column){
-    $all_data=getAllData('tanaman');
+    $endpoint = "$link/api/user/get/tanaman/id/$id_karyawan/area/$area";
 
-    $result = [];
+    $res = $client->get($endpoint, [
+        'headers' => $headers,
+    ]);
 
-    foreach($all_data as $single_data) {
-        $result[] = $single_data["$column"];
-    }
-
-    return !empty($result) ? $result : false;
-}
-
-function login($username){
-    
+    return $res->getBody();
 }

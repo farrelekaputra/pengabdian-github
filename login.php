@@ -1,3 +1,12 @@
+<?php 
+
+if(isset($_POST['masuk'])){    
+    var_dump($_POST);
+    die();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,16 +95,18 @@ button:hover{
     <div class="bg"><img src="img/background.jpg" alt=""></div>
     <div class="container" id="container">
         <div class="left p-2 px-5 rounded-start-4">
+        <form action="" method="post">
             <label for="login" class="fs-2 pb-3 text-light">Masuk</label>
             <div class="Id pb-2" id="Id">
-                <label for="IdKaryawan" class="pb-1 text-light">ID Karyawan</label>
-                <input type="Masukkan ID Karyawan" class="rounded-1 border-0">
+                <label for="IdKaryawan" class="pb-1 text-light">Email</label>
+                <input type="Masukkan ID Karyawan" id="email" class="rounded-1 border-0">
             </div>
             <div class="Code pb-3" id="Code">
-                <label for="CodeKaryawan" class="pb-1 text-light">Kode Karyawan</label>
-                <input type="Masukkan Kode Karyawan" class="rounded-1 border-0">
+                <label for="CodeKaryawan" class="pb-1 text-light">Password</label>
+                <input type="Masukkan Kode Karyawan" id="password" class="rounded-1 border-0">
             </div>
-            <button class="btn btn-warning mx-auto mb-3 text-light fw-bolder">Masuk</button>
+            <button id="masuk" class="btn btn-warning mx-auto mb-3 text-light fw-bolder">Masuk</button>
+            </form>
         </div>
         <div class="right px-5 rounded-end-4">
             <div class="upText">
