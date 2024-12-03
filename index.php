@@ -153,9 +153,6 @@ body {
     box-shadow: #2125296c 2px 2px 2px 2px;
     transition: .3s;
 }
-.fruit-img img{
-    width: 50%;
-}
 /* .avocado .Dtext{
     align-items: center;
     justify-content: center;
@@ -192,7 +189,7 @@ body {
     transition: .3s;
 }
 .fruit-img img{
-    width: 36%;
+    width: 80px;
 }
 /* .contentB .Orange .Orangetext{
     display: flex;
@@ -221,9 +218,7 @@ body {
 .grape:hover{
     box-shadow: #2125296c 2px 2px 2px 2px;
     transition: .3s;
-}
-.fruit-img img{
-    width: 36%;
+
 }
 .fruit-text{
     display: flex;
@@ -490,7 +485,7 @@ body {
               <div class="first">
                   <h2>Home</h2>
                   <div class="Mango bg-light rounded-3" onclick="window.location.href='detail-tanaman.php?id=<?=$id_tanaman[0]?>'">
-                    <div class="fruit-img"><img src="img/mango.png" alt=""></div>
+                    <div class="fruit-img w-6"><img src="img/kelengkeng.png" alt=""></div>
                     <div class="fruit-text" style="margin-top: 10px;">
                       <h2>
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="blue" class="bi bi-droplet" viewBox="0 0 16 16">

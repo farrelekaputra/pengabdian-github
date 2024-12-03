@@ -1,22 +1,73 @@
-<!doctype html>
+<?php 
+
+include "functions.php";
+
+$id_tanaman = getSingleColumn('tanaman','id');
+
+$activePage = "monitoring";
+
+?>
+
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoring</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<style>
+  html{
+    background-color: rgb(226, 226, 226);
+    overflow-x: hidden;
+}
+body {
+    font-family: var(--bs-font-sans-serif);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: rgb(226, 226, 226);
+}
+html{
+    background-color: rgb(226, 226, 226);
+    overflow-x: hidden;
+    }
+.container{
+    display:flex;
+    justify-content: space-around;
+}
+.Sidebar{
+    margin-right:4%;
+    display: sticky;
+    top: 0;
+}
+@media only screen and (max-width: 1200px){
+    .Sidebar{
+        height: 28rem;
+    }
+}
+</style>
+<body>
+    <!-- navbar -->
+    
+    <?php include "component/navbar.php" ?>
+    
+    <!-- container body -->
+      <div class="container bg-tertiary">
 
+        <!-- sidebar -->
+        <?php include "component/sidebar.php" ?>
 
-    <div class="container-fluid d-flex flex-column mx-auto" style="width: 90%;">
+        <!-- content -->
+        <div class="container-fluid d-flex flex-column mx-auto" style="width: 90%;">
       <h1 class="mb-5 pb-5">Monitoring</h1>
 
       <!-- Kelengkeng 1 -->
       <section class="Kelengkeng1 mb-5">
           <div class="content d-flex flex-column">
               <h3>
-                  Kelengkeng 1
+                <?=$id_tanaman[0]?>
               </h3>
               <hr>
               <div class="detail d-flex flex-column">
@@ -53,7 +104,7 @@
       <section class="Kelengkeng2 mb-5">
           <div class="content d-flex flex-column">
               <h3>
-                  Kelengkeng 2
+                <?=$id_tanaman[1]?>
               </h3>
               <hr>
               <div class="detail d-flex flex-column">
@@ -90,7 +141,7 @@
       <section class="Kelengkeng3 mb-5">
           <div class="content d-flex flex-column">
               <h3>
-                  Kelengkeng 3
+                <?=$id_tanaman[2]?>
               </h3>
               <hr>
               <div class="detail d-flex flex-column">
@@ -123,8 +174,35 @@
           </div>
       </section>
   </div>
-
-  
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  </body>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var menuButton = document.querySelector(".menu");
+    
+        var sidebar = document.querySelector(".Sidebar");
+    
+        menuButton.addEventListener("click", function() {
+          var isSidebarCollapsed = sidebar.style.width === "80px";
+    
+          if (isSidebarCollapsed) {
+            sidebar.style.width = "250px";
+            var sidebarLinks = sidebar.querySelectorAll("p");
+            sidebarLinks.forEach(function(link) {
+              link.style.display = "block";
+            });
+          } 
+          else {
+            sidebar.style.width = "80px";
+            var sidebarLinks = sidebar.querySelectorAll("p");
+            sidebarLinks.forEach(function(link) {
+              link.style.display = "none";
+            });
+          }
+        });
+    
+        sidebar.style.transition = "width 0.3s";
+      });
+  </script>
+       
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </html>
