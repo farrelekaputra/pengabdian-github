@@ -486,6 +486,7 @@ body {
                   <h2>Home</h2>
                   <div class="Mango bg-light rounded-3" onclick="window.location.href='detail-tanaman.php?id=<?=$id_tanaman[0]?>'">
                     <div class="fruit-img w-6"><img src="img/kelengkeng.png" alt=""></div>
+                    <div class="fruit-img"><img src="img/kelengkeng.png" alt=""></div>
                     <div class="fruit-text" style="margin-top: 10px;">
                       <h2>
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="blue" class="bi bi-droplet" viewBox="0 0 16 16">
@@ -499,7 +500,7 @@ body {
               </div>
               <div class="contentB rounded-3">
                 <div class="Orange bg-light rounded-2" onclick="window.location.href='detail-tanaman.php?id=<?=$id_tanaman[1]?>'">
-                        <div class="fruit-img"><img src="img/orange.png" alt=""></div>
+                        <div class="fruit-img"><img src="img/kelengkeng.png" alt=""></div>
                         <div class="fruit-text">
                             <label id="orange-waterlevel">
                                 <h2 style="display: flex;">
@@ -514,7 +515,7 @@ body {
                     </div>
                     <!-- anggur -->
                     <div class="grape bg-light rounded-2" onclick="window.location.href='detail-tanaman.php?id=<?=$id_tanaman[2]?>'">
-                        <div class="fruit-img"><img src="img/grape.png" alt=""></div>
+                        <div class="fruit-img"><img src="img/kelengkeng.png" alt=""></div>
                         <div class="fruit-text">
                           <label id="grape-waterlevel">
                             <h2>
@@ -529,7 +530,7 @@ body {
                       </div>
               </div>
                 <div class="tomato bg-light rounded-3" onclick="window.location.href='detail-tanaman.php?id=<?=$id_tanaman[3]?>'">
-                    <div class="fruit-img"><img src="img/tomato.png" alt=""></div>
+                    <div class="fruit-img"><img src="img/kelengkeng.png" alt=""></div>
                     <div class="fruit-text" style="margin-top: 10px;" >
                         <label id="tomato-waterlevel">
                             <h2>
@@ -543,7 +544,7 @@ body {
                     </div>
                 </div>
               <div class="avocado bg-light rounded-3" onclick="window.location.href='detail-tanaman.php?id=<?=$id_tanaman[4]?>'">
-                <div class="fruit-img"><img src="img/avocado.png" alt=""></div>
+                <div class="fruit-img"><img src="img/kelengkeng.png" alt=""></div>
                 <div class="fruit-text" style="margin-top: 10px;">
                     <label id="avocado-waterlevel">
                         <h2>
