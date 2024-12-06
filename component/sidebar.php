@@ -1,8 +1,10 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
+
 <style>
   .Sidebar{
     background-image: linear-gradient(to bottom, rgb(61, 117, 61), #1a3423);
-}
+  }
 @media only screen and (max-width: 1200px){
     .Sidebar{
         height: 28rem;
@@ -10,6 +12,9 @@
         background-color: rgba(50, 205, 50, 0);
         background-image: linear-gradient(to bottom, rgb(61, 117, 61), #1a3423);
         position: sticky;
+    }
+    label{
+      font-size:0;
     }
     .sidebar ul li{
         display: flex;

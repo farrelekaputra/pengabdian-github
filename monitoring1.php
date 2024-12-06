@@ -35,12 +35,12 @@ html{
     }
 .container{
     display:flex;
-    justify-content: space-around;
+    justify-content: center;
 }
 .Sidebar{
     margin-right:4%;
-    display: sticky;
-    top: 0;
+    position: fixed;
+    top: 1;
 }
 @media only screen and (max-width: 1200px){
     .Sidebar{
@@ -60,7 +60,7 @@ html{
         <?php include "component/sidebar.php" ?>
 
         <!-- content -->
-        <div class="container-fluid d-flex flex-column mx-auto" style="width: 90%;">
+        <div class="container-fluid d-flex flex-column mx-auto" style="width: 90%; margin-left: 14% !important">
       <h1 class="mb-5 pb-5">Monitoring</h1>
 
       <!-- Kelengkeng 1 -->
