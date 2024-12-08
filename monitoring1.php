@@ -61,7 +61,7 @@ html{
 
         <!-- content -->
         <div class="container-fluid d-flex flex-column mx-auto" style="width: 90%; margin-left: 14% !important">
-      <h1 class="mb-5 pb-5">Monitoring</h1>
+      <h1 class="mb-5 pb-5 text-3xl font-semibold pt-16">Monitoring</h1>
 
       <!-- Kelengkeng 1 -->
       <section class="Kelengkeng1 mb-5">
@@ -173,36 +173,7 @@ html{
               </div>
           </div>
       </section>
-  </div>
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        var menuButton = document.querySelector(".menu");
-    
-        var sidebar = document.querySelector(".Sidebar");
-    
-        menuButton.addEventListener("click", function() {
-          var isSidebarCollapsed = sidebar.style.width === "80px";
-    
-          if (isSidebarCollapsed) {
-            sidebar.style.width = "250px";
-            var sidebarLinks = sidebar.querySelectorAll("p");
-            sidebarLinks.forEach(function(link) {
-              link.style.display = "block";
-            });
-          } 
-          else {
-            sidebar.style.width = "80px";
-            var sidebarLinks = sidebar.querySelectorAll("p");
-            sidebarLinks.forEach(function(link) {
-              link.style.display = "none";
-            });
-          }
-        });
-    
-        sidebar.style.transition = "width 0.3s";
-      });
-  </script>
-       
+  </div>      
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </html>
