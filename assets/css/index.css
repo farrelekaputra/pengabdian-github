@@ -1,0 +1,447 @@
+html {
+  background-color: rgba(224, 224, 224);
+  /* overflow-x: hidden; */
+}
+body {
+  font-family: var(--bs-font-sans-serif);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: rgba(224, 224, 224);
+}
+.nav li {
+  height: 3rem;
+  margin-bottom: 1.4rem;
+  transition: 0.3s;
+}
+.nav li a:hover {
+  background-color: rgb(49, 134, 41);
+  transition: 0.2s;
+  border-radius: 5px;
+  color: white;
+  width: 100%;
+}
+.nav li:hover a {
+  color: white !important;
+}
+.Sidebar {
+  width: 16rem;
+  height: 28rem;
+  margin-top: -0.7rem;
+  background-color: rgba(50, 205, 50, 0);
+  background-image: linear-gradient(to bottom, rgb(61, 117, 61), #1a3423);
+}
+.sidebar ul li {
+  display: flex;
+}
+.sidebar p {
+  height: 28rem;
+  color: white !important;
+}
+.container {
+  display: flex;
+  margin-left: 0rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.content {
+  margin-left: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 2rem;
+}
+.content > .first {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.Mango {
+  padding: 2rem;
+  width: 12rem;
+  height: 25rem;
+  border-right: 0.6rem solid;
+  border-image: linear-gradient(to bottom, #fab02f, #d28908) 1;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  justify-self: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+.Mango:hover {
+  box-shadow: #2125296c 2px 2px 2px 2px;
+  transition: 0.3s;
+}
+.fruit-img img {
+  width: 80%;
+}
+/* .Mango .Atext{
+    align-items: center;
+    justify-content: center;
+}
+.Mango .Atext p{
+    text-align: end;
+} */
+.tomato {
+  width: 12rem;
+  height: 28rem;
+  /* background-color: rgb(13,110,253); */
+  border-right: 0.6rem solid;
+  border-image: linear-gradient(to bottom, #fd8383, #f35555) 1;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+.tomato:hover {
+  box-shadow: #2125296c 2px 2px 2px 2px;
+  transition: 0.3s;
+}
+.fruit-img img {
+  width: 50%;
+}
+/* .tomato .tomato-text{
+    align-items: center;
+    justify-content: center;
+}
+.tomato .tomato-text p{
+    text-align: end;
+} */
+.avocado {
+  width: 12rem;
+  height: 28rem;
+  /* background-color: rgb(13,110,253); */
+  border-right: 0.6rem solid;
+  border-image: linear-gradient(to bottom, #9ec74d, #80a92d) 1;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.avocado:hover {
+  box-shadow: #2125296c 2px 2px 2px 2px;
+  transition: 0.3s;
+}
+/* .avocado .Dtext{
+    align-items: center;
+    justify-content: center;
+}
+.avocado .Dtext p{
+    text-align: end;
+} */
+.contentB {
+  display: flex;
+  flex-direction: column;
+  width: 16rem;
+  height: 28rem;
+  justify-content: center;
+  gap: 1.8rem;
+  /* background-color: white; */
+}
+.contentB div {
+  height: 13rem;
+}
+.contentB > .Orange {
+  display: flex;
+  flex-direction: column;
+  border-right: 0.6rem solid;
+  border-image: linear-gradient(to bottom, #fab02f, #d28908) 1;
+  padding-top: 5%;
+  padding-right: 10%;
+  align-items: center;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  cursor: pointer;
+}
+.Orange:hover {
+  box-shadow: #2125296c 2px 2px 2px 2px;
+  transition: 0.3s;
+}
+.fruit-img img {
+  width: 80px;
+}
+/* .contentB .Orange .Orangetext{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0px;
+}
+.contentB .Orange .Orangetext p{
+    text-align: end;
+    margin-left: 20px;
+} */
+.contentB > .grape {
+  display: flex;
+  flex-direction: column;
+  border-right: 0.6rem solid;
+  border-image: linear-gradient(to bottom, #9970e4, #584085) 1;
+  padding-top: 12%;
+  padding-right: 10%;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  cursor: pointer;
+}
+.grape:hover {
+  box-shadow: #2125296c 2px 2px 2px 2px;
+  transition: 0.3s;
+}
+.fruit-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: -30%;
+}
+.fruit-text p {
+  text-align: end;
+}
+
+@media only screen and (max-width: 1200px) {
+  .Sidebar {
+    width: 80px;
+    height: 28rem;
+    margin-top: -10rem;
+    z-index: 9999;
+    background-color: rgba(50, 205, 50, 0);
+    background-image: linear-gradient(to bottom, rgb(61, 117, 61), #1a3423);
+  }
+  .sidebar ul li {
+    display: flex;
+  }
+  .sidebar p {
+    height: 28rem;
+    color: white !important;
+    display: block;
+  }
+  .container {
+    display: flex;
+    margin-left: 0rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    margin-left: 3.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1rem;
+  }
+  .content > .first {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: start;
+  }
+  .content .first h2 {
+    font-weight: bolder;
+  }
+  .Mango {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    width: 18rem;
+    height: 7rem;
+    border-right: 0.6rem solid;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+  }
+  .Mango:hover {
+    box-shadow: #2125296c 2px 2px 2px 2px;
+    transition: 0.3s;
+  }
+  .fruit-img img {
+    width: 74px;
+  }
+  /* .Mango .Atext {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: larger;
+        padding-top: 10px;
+    }
+    .Atext h2 svg {
+        width: 40px;
+    }
+    .Atext h2 {
+        display: flex;
+    }   */
+  .tomato {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    width: 18rem;
+    height: 7rem;
+    border-right: 0.6rem solid;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+  }
+  .tomato:hover {
+    box-shadow: #2125296c 2px 2px 2px 2px;
+    transition: 0.3s;
+  }
+  .tomato .fruit-img img {
+    width: 74px;
+  }
+  /* .tomato .tomato-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: larger;
+        padding-top: 10px;
+    }
+    .tomato-text h2 svg {
+        width: 40px;
+    }
+    .tomato-text h2 {
+        display: flex;
+    } */
+  .avocado {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    width: 18rem;
+    height: 7rem;
+    border-right: 0.6rem solid;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    cursor: pointer;
+  }
+  .avocado:hover {
+    box-shadow: #2125296c 2px 2px 2px 2px;
+    transition: 0.3s;
+  }
+  .fruit-img img {
+    width: 74px;
+  }
+  /* .avocado .Dtext {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: larger;
+        padding-top: 10px;
+    }
+    .Dtext h2 svg {
+        width: 40px;
+    }
+    .Dtext h2 {
+        display: flex;
+    } */
+  .contentB {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    height: auto;
+    margin-left: -3rem;
+  }
+  .contentB > .Orange {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    width: 18rem;
+    height: 7rem;
+    flex-wrap: wrap;
+    border-right: 0.6rem solid;
+    border-image: linear-gradient(to bottom, #fd8383, #f35555) 1;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    margin-left: 8px;
+  }
+  .Orange:hover {
+    box-shadow: #2125296c 2px 2px 2px 2px;
+    transition: 0.3s;
+  }
+  .fruit-img img {
+    width: 74px;
+  }
+  .contentB .Orange .fruit-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: larger;
+    margin-top: -100px;
+    color: #1e1e1e;
+  }
+  /* .contentB .Orange .Orangetext h2{
+        display: flex;
+    }
+    .contentB .Orange .Orangetext h2 svg{
+        width: 40px;
+    }
+    .contentB .Orange .Orangetext p{
+        display: flex;
+        width: 100px;
+        margin-left: 50px;
+    } */
+  .contentB > .grape {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    width: 18rem;
+    height: 7rem;
+    flex-wrap: wrap;
+    border-right: 0.6rem solid;
+    border-image: linear-gradient(to bottom, #fd8383, #f35555) 1;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    margin-left: 7px;
+    cursor: pointer;
+  }
+  .grape:hover {
+    box-shadow: #2125296c 2px 2px 2px 2px;
+    transition: 0.3s;
+  }
+  .fruit-img img {
+    width: 74px;
+  }
+  .contentB .grape .fruit-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: larger;
+    margin-left: -60px;
+    margin-top: 16px;
+  }
+  .contentB .grape .fruit-text h2 {
+    display: flex;
+  }
+  .contentB .grape .fruit-text h2 svg {
+    width: 40px;
+  }
+  .contentB .grape .fruit-text p {
+    display: flex;
+    width: 100px;
+    margin-left: 50px;
+  }
+}

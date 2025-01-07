@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php 
 
 if(isset($_POST['masuk'])){    
@@ -122,7 +121,6 @@ button:hover{
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </html>
-=======
 <?php
 session_start();
 include("functions.php");
@@ -270,4 +268,3 @@ if (isset($_POST['login'])) {
   </body>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </html>
->>>>>>> d42b78a1653bd71314d43c1726b7405c20014a56
